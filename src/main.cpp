@@ -2,12 +2,13 @@
 
 const int VOLTAGE_PIN = 35;
 const int CURRENT_PIN = 34;
+const int MOSFET_PIN  = 26;
 
 const float R1 = 20000.0;
 const float R2 = 10000.0;
 
-const float ACS_SENSITIVITY = 0.185; // 5A ACS712
-float acsZeroVoltage = 2.54;
+const float ACS_SENSITIVITY = 0.185;
+float acsZeroVoltage = 2.540;
 
 const int NUM_SAMPLES = 64;
 
@@ -18,7 +19,12 @@ void setup() {
   analogSetPinAttenuation(VOLTAGE_PIN, ADC_11db);
   analogSetPinAttenuation(CURRENT_PIN, ADC_11db);
 
-  Serial.println("Voltage + Current Test");
+  pinMode(MOSFET_PIN, OUTPUT);
+
+  // Start with load ON
+  digitalWrite(MOSFET_PIN, LOW);
+
+  Serial.println("Voltage + Current + MOSFET Test");
 }
 
 void loop() {
@@ -49,16 +55,14 @@ void loop() {
   Serial.print(supplyVoltage, 3);
   Serial.println(" V");
 
-  Serial.print("ACS712 OUT:     ");
-  Serial.print(acsVoltage, 3);
-  Serial.println(" V");
-
   Serial.print("Current:        ");
   Serial.print(current, 3);
   Serial.println(" A");
 
+  Serial.print("MOSFET:         ");
+  Serial.println("ON");
+
   Serial.println("-----------------------------");
-  Serial.println();
 
   delay(1000);
 }
