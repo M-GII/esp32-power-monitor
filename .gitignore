@@ -3,9 +3,9 @@
 
 include/secrets.h
 
-include/README
-lib/README
-test/README
+include/
+lib/
+test/
 
 .DS_Store
 Thumbs.db
