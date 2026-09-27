@@ -235,7 +235,7 @@ The dashboard provides a simple HMI-style interface for observing the embedded p
 
 ### Functional Hardware Prototype
 
-![Functional hardware prototype](media/hardware-prototype.png)
+![Functional hardware prototype](media/hardware-protoype.png)
 
 ### Normal Operation
 
