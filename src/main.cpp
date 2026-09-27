@@ -10,8 +10,8 @@ const float R2 = 10000.0;
 const float ACS_SENSITIVITY = 0.185;
 const float ACS_ZERO_VOLTAGE = 2.540;
 
-const float WARNING_CURRENT = 0.35; // A
-const float FAULT_CURRENT   = 0.40; // A
+const float WARNING_CURRENT = 0.30; // A
+const float FAULT_CURRENT   = 0.70; // A
 
 const int NUM_SAMPLES = 64;
 
